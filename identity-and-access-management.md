@@ -8,6 +8,12 @@
 
 ## IAM Users, Groups, Roles and Policies
 
-## IAM Authentication Method
+## IAM Authentication Methods
+
+IAM has two authentication methods:
+
+1. Authentication through AWS Management Console by using **username** and **password**.
+
+2. Authentication through programmatic access by using **Access key ID** and **Secret access key**.
 
 ![IAM Authentication Methods](images/iam-authentication-methods.png)
