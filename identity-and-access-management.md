@@ -17,3 +17,6 @@ IAM has two authentication methods:
 2. Authentication through programmatic access by using **Access key ID** and **Secret access key**.
 
 ![IAM Authentication Methods](images/iam-authentication-methods.png)
+
+## IAM Security Token Service (STS)
+
