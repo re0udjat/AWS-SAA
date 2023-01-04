@@ -1,5 +1,59 @@
 # Identity and Access Management Service
 
+## IAM Policy Structure
+
+Identity-based policy structure:
+
+```json
+{
+    "Statement": [{
+        "Effect": "effect",
+        "Action": "action",
+        "Resource": "arn",
+        "Condition": {
+            "condition": {
+                "key": "value"
+            }
+        }
+    }]
+}
+```
+
+An IAM policy is a JSON document that consists of one or more statements:
+
+- **Effect:** Can be *Allow* or *Deny*.
+- **Action:** The specific API action for which you are granting or denying permission.
+- **Resource:** Specifies the resource that's affected by the action.
+- **Condition:** (Optional) Can be used to control when your policy is in effect.
+
+Resource-based policy structure:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "ExamplePolicy",
+    "Statement": [{
+        "Sid": "ExampleStatement",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": "*"
+        },
+        "Action": [
+            "elasticfilesystem:ClientRootAccess",
+            "elasticfilesystem:ClientMount",
+            "elasticfilesystem:ClientWrite"
+        ],
+        "Condition": {
+            "Bool": {
+                "aws:SecureTransport": "true"
+            }
+        }
+    }]
+}
+```
+
+An IAM policy is a resource-based policy if we define *Principal* in that policy.
+
 ## IAM Best Practices
 
 Best practices for IAM services:
